@@ -12,3 +12,24 @@ document.addEventListener('click', function(event) {
         popupBox.classList.add('hidden');
     }
 });
+
+
+// Function to display the div once per session
+window.onload = function () {
+    console.log("Page loaded");
+
+    // Check if "updateShown" exists in sessionStorage
+    if (!sessionStorage.getItem("updateShown")) {
+        // Show the update div
+        document.getElementById("updateDiv").style.display = "flex"; // Ensure it's using flexbox
+
+        // Mark the update as shown for this session
+        sessionStorage.setItem("updateShown", "true");
+    }
+};
+
+// Function to close the div
+function closeDiv() {
+    // Hide the update div when closed
+    document.getElementById("updateDiv").style.display = "none";
+}
