@@ -14,15 +14,24 @@ window.onload = function () {
         popupBox.style.display = 'none';
     });
 
+        const TampermonkeyBox = document.getElementById('tampermonkeyBox');
+        const openTampermonkeyButton = document.getElementById('openTampermonkeyBtn');
+        const closeTampermonkeyBox = document.getElementById('closeTampermonkey');
 
+        openTampermonkeyButton.addEventListener('click', () => {
+            TampermonkeyBox.style.display = 'flex';
+        });
+        
+        // Hide the popup box when the close button is clicked
+        closeTampermonkeyBox.addEventListener('click', () => {
+            TampermonkeyBox.style.display = 'none';
+        });
 
     const updateDiv = document.getElementById('updateDiv');
     const closeUpdateButton = document.getElementById('closeUpdate');
 
     updateDiv.style.display = 'flex';
 
-    
-    // Hide the popup box when the close button is clicked
     closeUpdateButton.addEventListener('click', () => {
         updateDiv.style.display = 'none';
     });
